@@ -133,9 +133,11 @@ g++ -o client client.cpp -std=c++11 -lpthread
 |----------|----------|
 | ```
 请输入消息：Hello, World!
+
 服务端回声：Hello, World!
 
 请输入消息：This is a test
+
 服务端回声：This is a test
 
 请输入消息：exit
