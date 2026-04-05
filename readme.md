@@ -131,15 +131,10 @@ g++ -o client client.cpp -std=c++11 -lpthread
 
 | 客户端输出 | 服务器输出 |
 |----------|----------|
-| ```
-请输入消息：Hello, World!
-
+| ```请输入消息：Hello, World!
 服务端回声：Hello, World!
-
 请输入消息：This is a test
-
 服务端回声：This is a test
-
 请输入消息：exit
 客户端已退出
 ``` | ```
