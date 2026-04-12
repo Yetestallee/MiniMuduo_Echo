@@ -2,7 +2,7 @@
 
 ## 📡 项目功能概述
 
-本项目是一个基于 C++ 开发的高性能 TCP 回声服务器系统。采用 `epoll` I/O 多路复用技术与固定大小线程池模型，支持高并发客户端连接处理，适用于学习 Linux 网络编程、多线程同步及 TCP 粘包问题解决方案。
+本项目是一个基于 C++ 开发的高性能 TCP 回声服务器系统。采用 `epoll` I/O 多路复用技术与固定大小线程池模型，支持高并发客户端连接处理，适用于学习 Linux 网络编程、多线程同步及 TCP 粘包问题解决方案，已完整 Docker 化。。
 
 客户端发送的消息以换行符 (`\n`) 为分隔符，服务端接收后按协议拆包并原样回显。该设计有效解决了 TCP 字节流传输中的粘包问题，确保消息边界清晰。系统具备良好的可维护性与扩展性，是理解现代网络服务架构的理想范例。
 
@@ -124,6 +124,24 @@ g++ -o client client.cpp -std=c++11 -lpthread
    ```
 
 > **重要提示**：必须先运行服务器再启动客户端，否则客户端将因无法建立连接而报错。
+
+## 快速开始
+
+### ：使用 Docker Compose 一键启动（推荐）
+
+```bash
+# 1. 克隆仓库
+git clone https://github.com/yetestallee/mini-muduo-echo-server.git
+cd mini-muduo-echo-server
+
+# 2. 启动服务栈（TCP服务器 + Redis）
+docker compose up -d
+
+# 3. 查看服务状态
+docker compose ps
+
+# 4. 查看实时日志
+docker compose logs -f tcp-server
 
 最小可运行代码片段（来自 `client.cpp`）：
 
